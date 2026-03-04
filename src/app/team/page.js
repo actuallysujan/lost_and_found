@@ -8,8 +8,8 @@ const TEAMS = [
     icon: '🎵',
     description: 'The heartbeat of Lost & Found — singers, instrumentalists, and bands.',
     members: [
-      'Nagacharan', 'Jeevan Datt', 'Sujan', 'Akanksh K.A',
-      'Anirudh', 'Apeksha', 'Gunasaagari', 'Tushar',
+      'Anvita','Sujan','Nagacharan', 'Jeevan Datt', 'Akanksh K.A',
+      'Anirudh', 'Apeksha', 'Tejaswnini','Gunasaagari', 'Tushar',
       'Vinay', 'Vishal', 'Ankith', 'Manorakith', 'Nikhil',
     ],
   },
@@ -18,9 +18,9 @@ const TEAMS = [
     icon: '🎭',
     description: 'Script writers, directors, actors, and storytellers on stage.',
     members: [
-      'Rakshith Ramakrishna', 'Srushti Raghavendra', 'Akanksh Shetty',
-      'Tejas Krishna', 'Rudresh', 'Faizan', 'Likith', 'Rudra',
-      'Bharath', 'Sujan',
+      
+      'Pavan Bass','Anirudh','Rishi Swaroop',
+      'Anvita', 'Sujan',
     ],
   },
   {
@@ -28,7 +28,7 @@ const TEAMS = [
     icon: '⚙️',
     description: 'The crew behind the scenes — sound, lighting, and everything that runs the show.',
     members: [
-      'Chiranjeevi', 'Rajnish', 'Harsha', 'Likith',
+      'Anvita', 'Sujan','Rajnish', 'Harsha', 'Likith',
       'Priyanka', 'Monica', 'Nikhil', 'Siddhant', 'Nithin',
     ],
   },

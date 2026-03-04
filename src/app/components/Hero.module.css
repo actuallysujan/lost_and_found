@@ -9,28 +9,6 @@
   overflow: hidden;
   padding: 120px 40px 80px;
 }
-/* ── Add this block to your existing Hero.module.css ── */
-
-.lottieBg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30000px;
-  max-width: 100%;
-  opacity: 0.20;          /* subtle — increase to 0.2 for more visible */
-  pointer-events: none;   /* clicks pass through to buttons/links */
-  z-index: 0;
-
-  /* Optional: tint green to match brand */
-  filter: hue-rotate(80deg) saturate(0.5);
-}
-
-/* This already exists in your file — just confirm z-index: 1 is set */
-.content {
-  position: relative;
-  z-index: 1;
-}
 
 /* Background effects */
 .bgGlow {
@@ -52,6 +30,20 @@
     linear-gradient(90deg, rgba(143, 172, 126, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
+}
+
+/* Lottie background */
+.lottieBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  max-width: 100%;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  filter: hue-rotate(80deg) saturate(0.5);
 }
 
 /* Content */
@@ -188,7 +180,49 @@
   50%       { opacity: 1; }
 }
 
+/* ── Mobile fixes ── */
 @media (max-width: 600px) {
-  .icons { gap: 20px; font-size: 1.1rem; }
-  .cta { gap: 12px; }
+  /* Less padding so content breathes */
+  .hero {
+    padding: 100px 24px 80px;
+  }
+
+  /* Tighter title — fits on fewer lines */
+  .title {
+    font-size: clamp(3rem, 16vw, 5rem);
+    line-height: 1.05;
+  }
+
+  /* Tagline — stop awkward mid-word wrapping */
+  .tagline {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+
+  /* Buttons — side by side, share the row equally */
+  .cta {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 0 4px;
+  }
+
+  .btnPrimary,
+  .btnOutline {
+    flex: 1;
+    text-align: center;
+    padding: 13px 12px;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Icons — spread evenly across full width */
+  .icons {
+    gap: 0;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 44px;
+    opacity: 0.5;
+  }
 }
