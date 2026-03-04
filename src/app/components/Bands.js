@@ -2,12 +2,13 @@ import styles from './Bands.module.css'
 
 const BANDS = [
   {
-    name: 'SARGAM',
-    type: 'Softcore Group',
+    name: 'MAYAS',
+    type: 'Where Women Lead the Sound',
     color: '#8fac7e',
-    symbol: '𝄞',
+    symbol: '🔱',
     description:
-      'The softcore music group, bringing people together through gentle, melodious performances. Soothing vocals supported by the warm tones of keyboard, clapbox, and guitars — creating a heartfelt musical atmosphere.',
+      'MAYAS is a female dominated group driven by powerful female vocals, placing women at the heart of the music\
+Spanning genres from classical and folk to indie, fusion, devotional, and contemporary, MAYAS delivers expressive performances backed by skilled instrumentalists—creating a rich, immersive sound where the voice leads every moment.',
     vibe: 'Soft · Emotional · Melodic',
   },
   {

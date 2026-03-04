@@ -1,4 +1,6 @@
+'use client'
 import styles from './Hero.module.css'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 export default function Hero() {
   return (
@@ -6,6 +8,15 @@ export default function Hero() {
       {/* Decorative background elements */}
       <div className={styles.bgGlow} />
       <div className={styles.bgGrid} />
+
+      {/* Lottie background animation — place your .lottie file in /public/animations/ */}
+      <div className={styles.lottieBg}>
+        <DotLottieReact
+          src="/animations/music_fly.lottie"
+          loop
+          autoplay
+        />
+      </div>
 
       <div className={styles.content}>
         <p className={`mono ${styles.eyebrow}`}>• Community •</p>

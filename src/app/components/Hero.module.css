@@ -9,6 +9,28 @@
   overflow: hidden;
   padding: 120px 40px 80px;
 }
+/* ── Add this block to your existing Hero.module.css ── */
+
+.lottieBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30000px;
+  max-width: 100%;
+  opacity: 0.20;          /* subtle — increase to 0.2 for more visible */
+  pointer-events: none;   /* clicks pass through to buttons/links */
+  z-index: 0;
+
+  /* Optional: tint green to match brand */
+  filter: hue-rotate(80deg) saturate(0.5);
+}
+
+/* This already exists in your file — just confirm z-index: 1 is set */
+.content {
+  position: relative;
+  z-index: 1;
+}
 
 /* Background effects */
 .bgGlow {

@@ -5,7 +5,7 @@
 }
 
 .header {
-  margin-bottom: 64px;
+  margin-bottom: 56px;
 }
 
 .heading {
@@ -13,51 +13,156 @@
   margin-top: 12px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 48px;
-}
-
-.group {
-  /* Each team block */
-}
-
-.groupLabel {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--green);
-  border-bottom: 1px solid rgba(143, 172, 126, 0.25);
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-}
-
-.memberList {
-  list-style: none;
+/* ── Carousel ── */
+.carousel {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 24px;
 }
 
-.member {
-  font-size: 1rem;
-  color: rgba(240, 237, 232, 0.7);
-  padding-left: 12px;
-  border-left: 2px solid rgba(143, 172, 126, 0.2);
-  transition: color 0.2s, border-color 0.2s;
+/* Arrow buttons */
+.arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(143, 172, 126, 0.3);
+  background: transparent;
+  color: var(--green);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.member:hover {
-  color: var(--white);
+.arrow:hover {
+  background: rgba(143, 172, 126, 0.1);
   border-color: var(--green);
 }
 
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+/* Card */
+.card {
+  flex: 1;
+  border: 1px solid rgba(143, 172, 126, 0.15);
+  padding: 40px 44px;
+  background: rgba(143, 172, 126, 0.03);
+  animation: slideIn 0.35s ease both;
+  min-height: 280px;
 }
 
-@media (max-width: 560px) {
-  .grid { grid-template-columns: 1fr; }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(143, 172, 126, 0.12);
+}
+
+.icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.teamIndex {
+  color: rgba(143, 172, 126, 0.45);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.cardLabel {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--green);
+  margin: 0 0 6px;
+}
+
+.memberCount {
+  color: rgba(240, 237, 232, 0.35);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+/* Member pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  padding: 6px 16px;
+  border: 1px solid rgba(143, 172, 126, 0.2);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: rgba(240, 237, 232, 0.7);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  cursor: default;
+}
+
+.pill:hover {
+  border-color: var(--green);
+  color: var(--white);
+  background: rgba(143, 172, 126, 0.08);
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(143, 172, 126, 0.4);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.dotActive {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ctaLink {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(143, 172, 126, 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.ctaLink:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .carousel { gap: 12px; }
+  .card { padding: 28px 24px; min-height: unset; }
+  .arrow { width: 40px; height: 40px; font-size: 1rem; }
+  .cardLabel { font-size: 1.4rem; }
 }
