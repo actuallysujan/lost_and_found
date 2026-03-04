@@ -1,0 +1,63 @@
+.team {
+  background: rgba(143, 172, 126, 0.02);
+  border-top: 1px solid rgba(143, 172, 126, 0.12);
+  border-bottom: 1px solid rgba(143, 172, 126, 0.12);
+}
+
+.header {
+  margin-bottom: 64px;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-top: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 48px;
+}
+
+.group {
+  /* Each team block */
+}
+
+.groupLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  border-bottom: 1px solid rgba(143, 172, 126, 0.25);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.memberList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member {
+  font-size: 1rem;
+  color: rgba(240, 237, 232, 0.7);
+  padding-left: 12px;
+  border-left: 2px solid rgba(143, 172, 126, 0.2);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.member:hover {
+  color: var(--white);
+  border-color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}

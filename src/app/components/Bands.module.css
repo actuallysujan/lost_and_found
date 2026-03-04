@@ -1,0 +1,72 @@
+.bands {
+  border-top: 1px solid rgba(143, 172, 126, 0.12);
+}
+
+.header {
+  margin-bottom: 64px;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-top: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.card {
+  padding: 56px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(var(--r), var(--g), var(--b), 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.symbol {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 24px;
+  opacity: 0.5;
+}
+
+.bandName {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 8px 0 24px;
+  line-height: 1;
+}
+
+.desc {
+  color: rgba(240, 237, 232, 0.65);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 440px;
+}
+
+.vibe {
+  color: rgba(240, 237, 232, 0.35);
+  font-size: 0.65rem;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 40px 28px; }
+}

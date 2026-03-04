@@ -1,0 +1,172 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 40px 80px;
+}
+
+/* Background effects */
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(143, 172, 126, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(143, 172, 126, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 172, 126, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.eyebrow {
+  margin-bottom: 24px;
+  animation: fadeDown 0.8s ease both;
+}
+
+.title {
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 900;
+  color: var(--green);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  animation: fadeUp 0.9s ease 0.1s both;
+}
+
+.amp {
+  color: var(--white);
+  font-style: italic;
+}
+
+.tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--grey-light);
+  margin-top: 24px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.tagline em {
+  color: var(--green);
+  font-style: italic;
+}
+
+.cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s ease 0.35s both;
+}
+
+.btnPrimary {
+  padding: 14px 36px;
+  background: var(--green);
+  color: var(--black);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  background: #a8c495;
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  padding: 14px 36px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btnOutline:hover {
+  background: var(--green-muted);
+  transform: translateY(-2px);
+}
+
+/* Icon row */
+.icons {
+  display: flex;
+  gap: 32px;
+  margin-top: 64px;
+  font-size: 1.4rem;
+  opacity: 0.3;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 1s ease 0.5s both;
+}
+
+/* Scroll indicator */
+.scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  animation: fadeUp 1s ease 0.7s both;
+}
+
+.scrollLine {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--green), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .icons { gap: 20px; font-size: 1.1rem; }
+  .cta { gap: 12px; }
+}

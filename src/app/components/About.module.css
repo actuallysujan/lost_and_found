@@ -1,0 +1,63 @@
+.about {
+  border-top: 1px solid rgba(143, 172, 126, 0.12);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 28px;
+  margin-top: 12px;
+}
+
+.body {
+  color: rgba(240, 237, 232, 0.7);
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+/* Stat cards */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.stat {
+  background: rgba(143, 172, 126, 0.05);
+  border: 1px solid rgba(143, 172, 126, 0.12);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.3s;
+}
+
+.stat:hover {
+  background: rgba(143, 172, 126, 0.1);
+}
+
+.statNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--green);
+  line-height: 1;
+}
+
+.statLabel {
+  color: var(--grey-light);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 480px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 24px 20px; }
+}
