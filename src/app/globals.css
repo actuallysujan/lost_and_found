@@ -74,3 +74,15 @@ h1, h2, h3 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Responsive base ── */
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .container { padding: 0 28px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 56px 0; }
+  .container { padding: 0 20px; }
+  body { font-size: 16px; }
+}

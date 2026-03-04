@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import styles from './Team.module.css'
 
 const TEAMS = [
@@ -7,8 +7,8 @@ const TEAMS = [
     label: 'Music Team',
     icon: '🎵',
     members: [
-      'Anvita','Sujan','Nagacharan', 'Jeevan Datt', 'Akanksh K.A',
-      'Anirudh', 'Apeksha','Tejaswini', 'Gunasaagari', 'Tushar',
+      'Nagacharan', 'Jeevan Datt', 'Sujan', 'Akanksh K.A',
+      'Anirudh', 'Apeksha', 'Gunasaagari', 'Tushar',
       'Vinay', 'Vishal', 'Ankith', 'Manorakith', 'Nikhil',
     ],
   },
@@ -16,16 +16,16 @@ const TEAMS = [
     label: 'Theatre Team',
     icon: '🎭',
     members: [
-      'Pavan Bass', 'Rishi Swaroop', 'Anvita',
-      'Sujan', 'Anirudh', 'Aapeksha'
-     
+      'Rakshith Ramakrishna', 'Srushti Raghavendra', 'Akanksh Shetty',
+      'Tejas Krishna', 'Rudresh', 'Faizan', 'Likith', 'Rudra',
+      'Bharath', 'Sujan',
     ],
   },
   {
     label: 'Technical Team',
     icon: '⚙️',
     members: [
-       'Rajnish', 'Harsha', 'Anvita','Sujan','Likith',
+      'Chiranjeevi', 'Rajnish', 'Harsha', 'Likith',
       'Priyanka', 'Monica', 'Nikhil', 'Siddhant', 'Nithin',
     ],
   },
@@ -39,8 +39,23 @@ const TEAMS = [
 export default function Team() {
   const [active, setActive] = useState(0)
 
+  // Touch swipe support
+  const touchStartX = useRef(null)
+
   const prev = () => setActive(i => (i - 1 + TEAMS.length) % TEAMS.length)
   const next = () => setActive(i => (i + 1) % TEAMS.length)
+
+  const onTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (diff > 50) next()        // swipe left → next
+    if (diff < -50) prev()       // swipe right → prev
+    touchStartX.current = null
+  }
 
   const team = TEAMS[active]
 
@@ -57,12 +72,15 @@ export default function Team() {
 
         {/* Carousel */}
         <div className={styles.carousel}>
+          <button className={styles.arrow} onClick={prev} aria-label="Previous team">←</button>
 
-          <button className={styles.arrow} onClick={prev} aria-label="Previous team">
-            ←
-          </button>
-
-          <div className={styles.card} key={active}>
+          {/* Swipeable card */}
+          <div
+            className={styles.card}
+            key={active}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
             <div className={styles.cardTop}>
               <span className={styles.icon}>{team.icon}</span>
               <div>
@@ -81,28 +99,27 @@ export default function Team() {
             </div>
           </div>
 
-          <button className={styles.arrow} onClick={next} aria-label="Next team">
-            →
-          </button>
+          <button className={styles.arrow} onClick={next} aria-label="Next team">→</button>
         </div>
 
-        {/* Dot indicators */}
+        {/* Dots — tap to jump, also acts as mobile nav since arrows are hidden */}
         <div className={styles.dots}>
-          {TEAMS.map((_, i) => (
+          {TEAMS.map((t, i) => (
             <button
               key={i}
               className={`${styles.dot} ${i === active ? styles.dotActive : ''}`}
               onClick={() => setActive(i)}
-              aria-label={`Go to ${TEAMS[i].label}`}
+              aria-label={`Go to ${t.label}`}
             />
           ))}
         </div>
 
-        {/* Link to full page */}
+        {/* Swipe hint — only shows on touch devices */}
+        <p className={styles.swipeHint}>Swipe to browse teams</p>
+
+        {/* Link to full team page */}
         <div className={styles.cta}>
-          <a href="/team" className={styles.ctaLink}>
-            View Full Team Directory →
-          </a>
+          <a href="/team" className={styles.ctaLink}>View Full Team Directory →</a>
         </div>
 
       </div>

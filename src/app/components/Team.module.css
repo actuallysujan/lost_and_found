@@ -13,7 +13,7 @@
   margin-top: 12px;
 }
 
-/* ── Carousel ── */
+/* ── Carousel wrapper ── */
 .carousel {
   display: flex;
   align-items: center;
@@ -69,6 +69,7 @@
   font-size: 2.4rem;
   line-height: 1;
   margin-top: 4px;
+  flex-shrink: 0;
 }
 
 .teamIndex {
@@ -83,6 +84,8 @@
   font-size: 1.8rem;
   color: var(--green);
   margin: 0 0 6px;
+  line-height: 1.1;
+  word-break: break-word;
 }
 
 .memberCount {
@@ -106,6 +109,7 @@
   color: rgba(240, 237, 232, 0.7);
   transition: border-color 0.2s, color 0.2s, background 0.2s;
   cursor: default;
+  white-space: nowrap;
 }
 
 .pill:hover {
@@ -160,9 +164,83 @@
   border-color: var(--white);
 }
 
+/* Swipe hint — hidden on desktop, visible on touch */
+.swipeHint {
+  display: none;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(143, 172, 126, 0.35);
+  margin-top: 14px;
+}
+
+/* ── Tablet ── */
+@media (max-width: 768px) {
+  .card {
+    padding: 32px 28px;
+  }
+  .cardLabel {
+    font-size: 1.5rem;
+  }
+}
+
+/* ── Mobile ── */
 @media (max-width: 640px) {
-  .carousel { gap: 12px; }
-  .card { padding: 28px 24px; min-height: unset; }
-  .arrow { width: 40px; height: 40px; font-size: 1rem; }
-  .cardLabel { font-size: 1.4rem; }
+  /* Turn carousel vertical: card on top, arrows below as a row */
+  .carousel {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .card {
+    width: 100%;
+    padding: 24px 20px;
+    min-height: unset; /* no wasted space on small teams */
+    order: 1;
+  }
+
+  /* Hide side arrows on mobile — navigation moves to dot row */
+  .arrow {
+    display: none;
+  }
+
+  .cardTop {
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  }
+
+  .cardLabel {
+    font-size: 1.25rem;
+  }
+
+  .pill {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+  }
+
+  .pills {
+    gap: 8px;
+  }
+
+  /* Make dots bigger and easier to tap on mobile */
+  .dots {
+    margin-top: 20px;
+    gap: 14px;
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+  }
+
+  /* Show swipe hint only on mobile */
+  .swipeHint {
+    display: block;
+  }
 }
