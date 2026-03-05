@@ -1,6 +1,6 @@
-import styles from './Register.module.css'
+import styles from './Participant_Register.module.css'
 
-export default function Register() {
+export default function ParticipantRegister() {
   return (
 
     <section id="participantRegister" className={`section ${styles.registerSection}`}>

@@ -29,7 +29,7 @@ export default function Hero() {
         </p>
 
         <div className={styles.cta}>
-          <a href="#about" className={styles.btnPrimary}>Discover More</a>
+          <a href="/events" className={styles.btnPrimary}>Get Tickets</a>
           <a href="#participantRegister" className={styles.btnOutline}>Join Us</a>
         </div>
       </div>

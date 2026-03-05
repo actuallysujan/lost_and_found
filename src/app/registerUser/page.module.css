@@ -1,0 +1,397 @@
+/* ── Base ── */
+.main {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(ellipse,
+    rgba(143, 172, 126, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGrid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(143, 172, 126, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 172, 126, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.backHome {
+  position: fixed;
+  top: 28px;
+  left: 36px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: rgba(143, 172, 126, 0.5);
+  text-decoration: none;
+  z-index: 10;
+  transition: color 0.2s;
+}
+.backHome:hover { color: #8fac7e; }
+
+/* ── Two-panel wrapper ── */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ════════════════════════════
+   LEFT PANEL
+════════════════════════════ */
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px 64px 60px;
+  border-right: 1px solid rgba(143, 172, 126, 0.1);
+  background: rgba(143, 172, 126, 0.02);
+  animation: fadeLeft 0.8s ease both;
+}
+
+.leftInner { max-width: 440px; }
+
+.leftEyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(143, 172, 126, 0.5);
+  margin-bottom: 28px;
+}
+
+.leftTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 900;
+  color: #8fac7e;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+
+.leftTitle em {
+  color: #f0ede8;
+  font-style: italic;
+}
+
+.leftSub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: rgba(240, 237, 232, 0.45);
+  line-height: 1.8;
+  margin-top: clamp(12px, 2vw, 24px);
+  margin-bottom: 48px;
+  max-width: 360px;
+}
+
+.artList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.artItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: rgba(240, 237, 232, 0.5);
+}
+
+.artDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8fac7e;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.leftTagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(143, 172, 126, 0.3);
+  letter-spacing: 0.05em;
+}
+
+/* ════════════════════════════
+   RIGHT PANEL
+════════════════════════════ */
+.right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 48px 60px;
+  overflow-y: auto;
+  animation: fadeRight 0.8s ease 0.1s both;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoMark {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 36px;
+}
+
+.logoText {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #8fac7e;
+}
+
+.logoAmp {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #f0ede8;
+  font-style: italic;
+  margin: 0 3px;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #f0ede8;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.cardSub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: rgba(240, 237, 232, 0.4);
+  margin-bottom: 32px;
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+/* Side-by-side name fields */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 232, 0.4);
+}
+
+.input {
+  background: rgba(143, 172, 126, 0.04);
+  border: 1px solid rgba(143, 172, 126, 0.18);
+  color: #f0ede8;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  padding: 12px 16px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.input::placeholder { color: rgba(240, 237, 232, 0.18); }
+
+.input:focus {
+  border-color: rgba(143, 172, 126, 0.6);
+  background: rgba(143, 172, 126, 0.07);
+}
+
+/* Dropdown select */
+.select {
+  background: rgba(143, 172, 126, 0.04);
+  border: 1px solid rgba(143, 172, 126, 0.18);
+  color: #f0ede8;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  padding: 12px 16px;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238fac7e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.select option {
+  background: #0f0f0f;
+  color: #f0ede8;
+}
+
+.select:focus {
+  border-color: rgba(143, 172, 126, 0.6);
+  background-color: rgba(143, 172, 126, 0.07);
+}
+
+/* ── Buttons ── */
+.btnRegister {
+  width: 100%;
+  padding: 15px;
+  background: #8fac7e;
+  color: #0a0a0a;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btnRegister:hover {
+  background: #a8c495;
+  transform: translateY(-1px);
+}
+.btnRegister:active { transform: translateY(0); }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(143, 172, 126, 0.12);
+}
+
+.dividerText {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 237, 232, 0.2);
+}
+
+.btnLogin {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(143, 172, 126, 0.35);
+  color: #8fac7e;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btnLogin:hover {
+  background: rgba(143, 172, 126, 0.08);
+  border-color: #8fac7e;
+  transform: translateY(-1px);
+}
+
+.btnGuest {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  color: rgba(240, 237, 232, 0.28);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color 0.2s;
+}
+.btnGuest:hover { color: rgba(240, 237, 232, 0.55); }
+
+/* ── Animations ── */
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+@media (max-width: 900px) {
+  .wrapper { grid-template-columns: 1fr; }
+
+  .left {
+    padding: 100px 40px 40px;
+    border-right: none;
+    border-bottom: 1px solid rgba(143, 172, 126, 0.1);
+  }
+
+  .leftTitle { font-size: 2.8rem; }
+
+  .artList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+
+  .leftTagline { display: none; }
+
+  .right { padding: 48px 40px 60px; }
+}
+
+@media (max-width: 600px) {
+  .backHome { left: 24px; top: 20px; }
+
+  .left { padding: 80px 24px 36px; }
+  .leftTitle { font-size: 2.2rem; }
+  .artList { grid-template-columns: 1fr 1fr; }
+
+  .right { padding: 36px 24px 60px; }
+  .card { max-width: 100%; }
+
+  .row { grid-template-columns: 1fr; }
+}
