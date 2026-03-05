@@ -1,40 +1,8 @@
 'use client'
 import { useState, useRef } from 'react'
 import styles from './Team.module.css'
+import { TEAMS } from  '../utils/constants'
 
-const TEAMS = [
-  {
-    label: 'Music Team',
-    icon: '🎵',
-    members: [
-      'Nagacharan', 'Jeevan Datt', 'Sujan', 'Akanksh K.A',
-      'Anirudh', 'Apeksha', 'Gunasaagari', 'Tushar',
-      'Vinay', 'Vishal', 'Ankith', 'Manorakith', 'Nikhil',
-    ],
-  },
-  {
-    label: 'Theatre Team',
-    icon: '🎭',
-    members: [
-      'Rakshith Ramakrishna', 'Srushti Raghavendra', 'Akanksh Shetty',
-      'Tejas Krishna', 'Rudresh', 'Faizan', 'Likith', 'Rudra',
-      'Bharath', 'Sujan',
-    ],
-  },
-  {
-    label: 'Technical Team',
-    icon: '⚙️',
-    members: [
-      'Chiranjeevi', 'Rajnish', 'Harsha', 'Likith',
-      'Priyanka', 'Monica', 'Nikhil', 'Siddhant', 'Nithin',
-    ],
-  },
-  {
-    label: 'Art Team',
-    icon: '🎨',
-    members: ['Aadhya P', 'Nagalambika', 'Spandana', 'Rekha Nalvade'],
-  },
-]
 
 export default function Team() {
   const [active, setActive] = useState(0)
@@ -52,8 +20,8 @@ export default function Team() {
   const onTouchEnd = (e) => {
     if (touchStartX.current === null) return
     const diff = touchStartX.current - e.changedTouches[0].clientX
-    if (diff > 50) next()        // swipe left → next
-    if (diff < -50) prev()       // swipe right → prev
+    if (diff > 50) next()       
+    if (diff < -50) prev()       
     touchStartX.current = null
   }
 
