@@ -3,16 +3,17 @@ import { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
 
 const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Groups', href: '#groups' },
-  { label: 'Bands', href: '#bands' },
-  { label: 'Team', href: '#team' },
+  { label: 'About',   href: '#about' },
+  { label: 'Groups',  href: '#groups' },
+  { label: 'Bands',   href: '#bands' },
+  { label: 'Events',  href: '/events' }, 
+  { label: 'Team',    href: '#team' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+  const [open, setOpen]         = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -23,10 +24,10 @@ export default function Navbar() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
+
         {/* Logo */}
-        <a href="#hero" className={styles.logo}>
-          {/* Replace with <img src="/assets/logo.png" alt="Lost and Found" /> */}
-          <span className={styles.logoText}>L<span>&</span>F</span>
+        <a href="/" className={styles.logo}>
+          <span className={styles.logoText}>L<span>&amp;</span>F</span>
         </a>
 
         {/* Desktop links */}

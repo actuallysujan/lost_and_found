@@ -1,0 +1,223 @@
+.main { min-height: 100vh; }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Page Hero ── */
+.hero {
+  padding: 140px 0 64px;
+  border-bottom: 1px solid rgba(143, 172, 126, 0.12);
+  background: radial-gradient(ellipse at top center,
+    rgba(143, 172, 126, 0.07) 0%, transparent 65%);
+  margin-bottom: 0;
+}
+
+.back {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(143, 172, 126, 0.55);
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--green); }
+
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  color: var(--green);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: rgba(240, 237, 232, 0.45);
+}
+
+/* ── Shared section eyebrow ── */
+.sectionEyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(143, 172, 126, 0.5);
+  margin-bottom: 12px;
+}
+
+/* Register section */
+
+
+
+
+
+.eventsSection {
+  padding: 40px 0 80px;
+}
+
+.eventsSectionHeader {
+  margin-bottom: 40px;
+}
+
+.eventsHeading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--green);
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Past group */
+.pastGroup {
+  margin-top: 64px;
+}
+
+.pastLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(143, 172, 126, 0.35);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(143, 172, 126, 0.08);
+}
+
+/* ── Event Card ── */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 36px 40px;
+  border: 1px solid rgba(143, 172, 126, 0.12);
+  background: rgba(143, 172, 126, 0.02);
+  transition: background 0.3s, border-color 0.3s;
+}
+.card:hover {
+  background: rgba(143, 172, 126, 0.06);
+  border-color: rgba(143, 172, 126, 0.3);
+}
+
+.cardLeft { flex: 1; }
+
+.type {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid;
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: rgba(240, 237, 232, 0.5);
+  margin-bottom: 20px;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(240, 237, 232, 0.4);
+}
+
+.cardRight { flex-shrink: 0; }
+
+.ticketBtn {
+  display: inline-block;
+  padding: 13px 28px;
+  background: var(--green);
+  color: var(--black);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+.ticketBtn:hover {
+  background: #a8c495;
+  transform: translateY(-2px);
+}
+
+.pastBadge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 237, 232, 0.25);
+  text-transform: uppercase;
+  border: 1px solid rgba(240, 237, 232, 0.1);
+  padding: 8px 16px;
+}
+
+/* Empty state */
+.empty {
+  padding: 64px 0;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: rgba(240, 237, 232, 0.3);
+  line-height: 2.2;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .registerInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 24px; }
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+    gap: 20px;
+  }
+  .ticketBtn { width: 100%; text-align: center; }
+  .meta { gap: 12px; }
+  .registerCard { padding: 32px 24px; }
+}

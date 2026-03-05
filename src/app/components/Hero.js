@@ -5,11 +5,10 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
-      {/* Decorative background elements */}
       <div className={styles.bgGlow} />
       <div className={styles.bgGrid} />
 
-      {/* Lottie background animation — place your .lottie file in /public/animations/ */}
+      {/* Lottie background animation */}
       <div className={styles.lottieBg}>
         <DotLottieReact
           src="/animations/music_fly.lottie"
@@ -31,7 +30,7 @@ export default function Hero() {
 
         <div className={styles.cta}>
           <a href="#about" className={styles.btnPrimary}>Discover More</a>
-          <a href="#contact" className={styles.btnOutline}>Join Us</a>
+          <a href="#participantRegister" className={styles.btnOutline}>Join Us</a>
         </div>
       </div>
 
@@ -47,7 +46,6 @@ export default function Hero() {
 
       <a href="#about" className={styles.scroll}>
         <span className={styles.scrollLine} />
-        <span className="mono">Scroll</span>
       </a>
     </section>
   )

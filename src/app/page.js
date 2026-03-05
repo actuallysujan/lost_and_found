@@ -6,6 +6,7 @@ import Bands   from './components/Bands'
 import Team    from './components/Team'
 import Contact from './components/Contact'
 import Footer  from './components/Footer'
+import Register from './components/Register'
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
         <Bands />
         <Team />
         <Contact />
+        <Register/>
+        
       </main>
       <Footer />
     </>
