@@ -12,7 +12,7 @@ const EVENTS = [
                 type: 'Band Performance',
                 status: 'upcoming',
                 description: 'Two bands. Two worlds. One night. Softcore melodies meet heavy metal thunder.',
-                ticketLink: '/login',
+                ticketLink: 'https://docs.google.com/forms',
         },
 ]
 
