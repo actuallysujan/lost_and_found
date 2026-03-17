@@ -51,7 +51,7 @@ export default function Contact() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/lostandfoundcommunity26/"
+                href="https://www.instagram.com/lost.and.found_26/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contactItem}
