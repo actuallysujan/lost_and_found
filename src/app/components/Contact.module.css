@@ -73,7 +73,15 @@
   color: var(--white);
   margin-top: 4px;
 }
+.contactIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.contactIcon img {
+  object-fit: contain;
+}
 @media (max-width: 900px) {
   .inner { grid-template-columns: 1fr; gap: 48px; }
   .right { padding-top: 0; }

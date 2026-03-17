@@ -19,7 +19,7 @@ export default function Home() {
         <Bands />
         <Team />
         <Contact />
-        <ParticipantRegister/>
+        {/* <ParticipantRegister/> */}
         
       </main>
       <Footer />

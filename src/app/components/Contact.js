@@ -1,4 +1,5 @@
 import styles from './Contact.module.css'
+import Image from 'next/image'
 
 const REASONS = [
   'Join our community',
@@ -47,13 +48,36 @@ export default function Contact() {
                   <p className={styles.contactVal}>lostandfoundcommunity26@gmail.com</p>
                 </div>
               </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/lostandfoundcommunity26/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contactItem}
+              >
+                <span className={styles.contactIcon}>
+                  <Image
+                    src="/animations/images/instagram_icon.png"
+                    alt="Instagram"
+                    width={35}
+                    height={35}
+                    priority
+                  />
+                </span>
+
+                <div>
+                  <p className="mono">Follow Us</p>
+                  <p className={styles.contactVal}>@lost.and.found_26</p>
+                </div>
+              </a>
             </div>
 
           </div>
         </div>
       </section>
 
-      
+
     </>
   )
 }
